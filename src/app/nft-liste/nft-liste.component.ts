@@ -15,8 +15,16 @@ export class NftListeComponent implements OnInit{
     ngOnInit() {
       this.serviceNft.getAllNfts().subscribe(data=>{
         this.nftList = data;
-        console.log(this.nftList);
+       // console.log(this.nftList);
       });
     }
+
+    suppressNft(id:number, index: number){
+    this.serviceNft.deleteNft(id).subscribe(data=>{
+      this.nftList.splice(index,1);
+    })
+    }
+
+
 
 }

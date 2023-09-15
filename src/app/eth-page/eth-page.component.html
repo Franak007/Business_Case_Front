@@ -1,6 +1,15 @@
 <app-navbar></app-navbar>
 <div class="container">
   <div *ngFor="let eth of ethList">
-    <span>le {{eth.date}} : 1 ETH = {{eth.price}} $ </span>
+    <div class="m-3">
+      <span>le {{eth.date | date:'dd-MM-yyyy'}} Valeur ETH = {{eth.price}} $ </span>
+      <button (click)=selectEth(eth) data-bs-toggle="modal" data-bs-target="#ethModal">Voir ETH</button>
+    </div>
+
+    <!--    Modal-->
+    <div>
+      <app-eth-child [ethC]="ethParent"></app-eth-child>
+    </div>
   </div>
 </div>
+

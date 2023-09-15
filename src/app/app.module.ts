@@ -10,6 +10,7 @@ import { NftPageComponent } from './nft-page/nft-page.component';
 import { NftListeComponent } from './nft-liste/nft-liste.component';
 import {HttpClientModule} from "@angular/common/http";
 import { EthPageComponent } from './eth-page/eth-page.component';
+import { EthChildComponent } from './eth-child/eth-child.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EthPageComponent } from './eth-page/eth-page.component';
     Error404Component,
     NftPageComponent,
     NftListeComponent,
-    EthPageComponent
+    EthPageComponent,
+    EthChildComponent
   ],
   imports: [
     BrowserModule,

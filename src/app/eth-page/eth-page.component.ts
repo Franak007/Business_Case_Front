@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EthService} from "../eth.service";
 import {EthInterface} from "../eth-interface";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -10,9 +11,10 @@ import {EthInterface} from "../eth-interface";
 })
 export class EthPageComponent implements OnInit{
 
+  ethList: EthInterface[] =[];
+  ethParent: EthInterface | undefined;
+  ethSelected: EthInterface | undefined;
   constructor(private ethService: EthService) {}
-
-    ethList: EthInterface[] =[];
 
   ngOnInit() {
     this.ethService.getAllEth().subscribe(data=>{
@@ -20,4 +22,14 @@ export class EthPageComponent implements OnInit{
     })
   }
 
+  getidEth(id: number) {
+    this.ethService.getOneEth(id).subscribe(data=>{
+      this.ethSelected = data;
+      console.log(this.ethSelected);
+    })
+  }
+
+  selectEth(eth:EthInterface){
+    this.ethParent = eth;
+  }
 }

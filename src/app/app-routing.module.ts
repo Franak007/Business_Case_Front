@@ -9,6 +9,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'nft', component: NftPageComponent},
   {path: 'eth', component: EthPageComponent},
+  {path: 'eth/:id', component: EthPageComponent},
   {path: '**', component: Error404Component}
 ];
 
