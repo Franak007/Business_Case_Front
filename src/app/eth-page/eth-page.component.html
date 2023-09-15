@@ -1,1 +1,6 @@
 <app-navbar></app-navbar>
+<div class="container">
+  <div *ngFor="let eth of ethList">
+    <span>le {{eth.date}} : 1 ETH = {{eth.price}} $ </span>
+  </div>
+</div>
