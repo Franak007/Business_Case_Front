@@ -6,11 +6,11 @@ import {NftInterface} from "./nft-interface";
 @Injectable({
   providedIn: 'root'
 })
-export class NftService {
+export class EthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient ) { }
 
-  getAllNfts():Observable<NftInterface[]>{
-     return this.http.get<NftInterface[]>("https://127.0.0.1:8000/api/nft/");
+  getAllEth():Observable<NftInterface[]>{
+    return this.http.get<NftInterface[]>("https://127.0.0.1:8000/api/eth/");
   }
 }
