@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="container col-4 text-center">
+
+  <h4>Saisissez ci-dessous les champs que vous voulez modifier </h4>.
+  <p>(ne rien saisir dans les champs qui ne changent pas)</p>
+
+  <form #updateEth="ngForm" (ngSubmit)="onsubmit(updateEth)">
+    <input type="hidden" name="id" ngModel="{{selectedEth?.id}}">
+    <span>Nouvelle valeur : </span>
+    <input type="number" class="m-3 col-6" name="price" ngModel="{{selectedEth?.price}}" required><br>
+    <span>Nouvelle date : </span>
+    <input type="date" class="m-3 col-6" name="date" ngModel="{{selectedEth?.date | date:'yyyy-MM-dd'}}" required><br>
+
+    <button type="submit" class="btn btn-primary m-3" >Modifier l'ETH'</button>
+  </form>
+</div>

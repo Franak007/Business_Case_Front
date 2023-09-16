@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {NftInterface} from "./nft-interface";
-import {EthInterface} from "./eth-interface";
+import {NftInterface} from "../interfaces/nft-interface";
+import {EthInterface} from "../interfaces/eth-interface";
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,17 @@ export class EthService {
   addEth(eth: EthInterface): Observable<EthInterface>{
     const headers = { 'content-type': 'application/x-www-form-urlencoded'}
     const body = JSON.stringify(eth);
-    return this.http.post<EthInterface>('https://127.0.0.1:8000/api/eth/add', body, {'headers':headers})
+    return this.http.post<EthInterface>('https://127.0.0.1:8000/api/eth/new', body, {'headers':headers})
+  }
+
+  deleteEth(id: number){
+    return this.http.delete<EthInterface>("https://127.0.0.1:8000/api/eth/"+id)
+  }
+
+  updateEth(eth: EthInterface){
+    const headers = { 'content-type': 'application/x-www-form-urlencoded'}
+    const body = JSON.stringify(eth);
+    console.log(eth);
+    return this.http.post<EthInterface>("https://127.0.0.1:8000/api/eth/"+eth.id+"/edit", body, {'headers':headers})
   }
 }

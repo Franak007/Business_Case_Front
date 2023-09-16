@@ -1,9 +1,11 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <div *ngFor="let eth of ethList">
-    <div class="m-3">
-      <span>le {{eth.date | date:'dd-MM-yyyy'}} Valeur ETH = {{eth.price}} $ </span>
-      <button (click)=selectEth(eth) data-bs-toggle="modal" data-bs-target="#ethModal">Voir ETH</button>
+    <div *ngFor="let eth of ethList, let index= index">
+    <div >
+      <span class="m-1">le {{eth.date | date:'dd-MM-yyyy'}} Valeur ETH = {{eth.price}} $ </span>
+      <button class="m-1 btn btn-primary btn-sm" (click)=selectEth(eth) data-bs-toggle="modal" data-bs-target="#ethModal">Voir ETH</button>
+      <button  class="m-1 btn btn-primary btn-sm"  type="submit" routerLink="/eth/{{eth.id}}">Modifier</button>
+      <button class="m-1 btn btn-primary btn-sm" (click)=suppressEth(eth.id,index) >Supprimer</button>
     </div>
 
     <!--    Modal-->
@@ -11,5 +13,6 @@
       <app-eth-child [ethC]="ethParent"></app-eth-child>
     </div>
   </div>
+    <a class="btn btn-primary" routerLink="/eth/addEth" role="button">Ajouter un ETH</a>
 </div>
 

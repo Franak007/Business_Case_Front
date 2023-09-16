@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {EthInterface} from "../eth-interface";
+import {EthInterface} from "../interfaces/eth-interface";
 
 @Component({
   selector: 'app-eth-child',

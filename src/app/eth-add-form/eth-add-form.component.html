@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="container col-4 text-center">
+
+  <h4>Saisissez ci-dessous les champs requis pour la création de l'ETH (tous les champs sont requis) </h4>
+
+  <form #addEth="ngForm" (ngSubmit)="onSubmit(addEth)">
+    <input type="number" class="m-3 col-6" name="price" placeholder="Valeur" ngModel required><br>
+    <input type="date" class="m-3 col-6" name="date" placeholder="Date" ngModel required><br>
+
+    <button onclick="window.location.href = '/eth';" type="submit" class="btn btn-primary m-3" >Créer l'ETH'</button>
+  </form>
+</div>

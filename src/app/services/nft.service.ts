@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {NftInterface} from "./nft-interface";
+import {NftInterface} from "../interfaces/nft-interface";
 
 @Injectable({
   providedIn: 'root'

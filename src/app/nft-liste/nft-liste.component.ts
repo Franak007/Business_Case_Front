@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {NftInterface} from "../nft-interface";
-import {NftService} from "../nft.service";
+import {NftInterface} from "../interfaces/nft-interface";
+import {NftService} from "../services/nft.service";
 
 @Component({
   selector: 'app-nft-liste',

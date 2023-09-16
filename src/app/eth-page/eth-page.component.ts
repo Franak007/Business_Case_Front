@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {EthService} from "../eth.service";
-import {EthInterface} from "../eth-interface";
+import {EthService} from "../services/eth.service";
+import {EthInterface} from "../interfaces/eth-interface";
 import {Observable} from "rxjs";
 
 
@@ -31,5 +31,11 @@ export class EthPageComponent implements OnInit{
 
   selectEth(eth:EthInterface){
     this.ethParent = eth;
+  }
+
+  suppressEth(id: number, index: number) {
+    this.ethService.deleteEth(id).subscribe(data=>{
+      this.ethList.splice(index, 1);
+    })
   }
 }
